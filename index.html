@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AND Lab | Architectures, Nanomaterials & Dynamics</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        :root {
+            --bg-color: #1e1e1e;
+            --text-color: #cccccc;
+            --accent-blue: #4da6ff;
+            --accent-green: #00ff00;
+            --accent-cyan: #00ffff;
+            --accent-magenta: #ff00ff;
+            --accent-yellow: #ffff00;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Roboto Mono', monospace;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* --- THE LOGO STYLE --- */
+        .terminal-logo {
+            white-space: pre;
+            overflow-x: auto;
+            font-size: 13px; /* Adjust size if needed */
+            line-height: 1.2;
+            margin-bottom: 40px;
+            border: 1px solid #333;
+            padding: 15px;
+            border-radius: 5px;
+            background: #111;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+        }
+
+        h1, h2, h3 { color: var(--accent-cyan); }
+        h2 { border-bottom: 2px solid #333; padding-bottom: 10px; margin-top: 40px;}
+        
+        .research-tag {
+            display: inline-block;
+            background: #333;
+            color: var(--accent-green);
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 0.9em;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        a { color: var(--accent-blue); text-decoration: none; }
+        a:hover { text-decoration: underline; color: var(--accent-magenta); }
+
+        .equation-box {
+            background: #252525;
+            padding: 15px;
+            border-left: 3px solid var(--accent-yellow);
+            margin: 20px 0;
+        }
+
+        /* Blinking Cursor for effect */
+        .cursor::after {
+            content: '█';
+            animation: blink 1s infinite;
+            color: var(--accent-green);
+        }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <nav>
+        <span class="cursor">root@AND-Lab:~$</span> 
+        <a href="#about">./about</a> | 
+        <a href="#research">./research</a> | 
+        <a href="#publications">./publications</a> | 
+        <a href="#contact">./contact</a>
+    </nav>
+    <br><br>
+
+    <div class="terminal-logo">
+<span style="color: #555555;">+========================================================================================+</span>
+<span style="color: #555555;">|</span>   <span style="color: #ffffff; font-weight: bold;">ARCHITECTURES v2.0</span>   <span style="color: #555555;">|</span>    <span style="color: #ffffff; font-weight: bold;">NANOMATERIALS</span>    <span style="color: #555555;">|</span>    <span style="color: #ffffff; font-weight: bold;">DYNAMICS</span>    <span style="color: #555555;">|</span>   <span style="color: #00ffff; font-weight: bold;">THEORY DEVELOPMENT</span>   <span style="color: #555555;">|</span>
+<span style="color: #555555;">+========================================================================================+</span>
+<span style="color: #555555;">|</span>                                                                                        <span style="color: #555555;">|</span>
+<span style="color: #555555;">|</span>   <span style="color: #00ff00; font-weight: bold;">[ RESEARCH MODULES ]</span>          <span style="color: #4da6ff; font-weight: bold;">█████╗ ███╗   ██╗██████╗</span>        <span style="color: #ff00ff; font-weight: bold;">[ VISUALIZATION ]</span>      <span style="color: #555555;">|</span>
+<span style="color: #555555;">|</span>                                 <span style="color: #4da6ff; font-weight: bold;">██╔══██╗████╗  ██║██╔══██╗</span>                             <span style="color: #555555;">|</span>
+<span style="color: #555555;">|</span>   <span style="color: #ffffff;">&gt; Catalysis: Plasmonic</span>        <span style="color: #4da6ff; font-weight: bold;">███████║██╔██╗ ██║██║  ██║</span>          <span style="color: #00ffff;">. - .</span>   <span style="color: #ffff00;">(B)</span>        <span style="color: #555555;">|</span>
+<span style="color: #555555;">|</span>   <span style="color: #ffffff;">&gt; Homo & Hetero Catalysis</span>     <span style="color: #4da6ff; font-weight: bold;">██╔══██║██║╚██╗██║██║  ██║</span>         <span style="color: #00ffff;">/     \</span>   <span style="color: #ffff00;">|</span>         <span style="color: #555555;">|</span>
+<span style="color: #555555;">|</span>   <span style="color: #ffffff;">&gt; Valleytronics & Topology</span>    <span style="color: #4da6ff; font-weight: bold;">██║  ██║██║ ╚████║██████╔╝</span>        <span style="color: #00ffff;">.</span>  <span style="color: #ff00ff;">VAL</span>  <span style="color: #00ffff;">.</span>  <span style="color: #ffff00;">v</span>         <span style="color: #555555;">|</span>
+<span style="color: #555555;">|</span>   <span style="color: #ffffff;">&gt; Boron Band Structures</span>       <span style="color: #4da6ff; font-weight: bold;">╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝</span>          <span style="color: #00ffff;">\     /</span>  <span style="color: #ffff00;">[e-]</span>       <span style="color: #555555;">|</span>
+<span style="color: #555555;">|</span>   <span style="color: #ffffff;">&gt; Ab Initio MD & QM/MM</span>                                            <span style="color: #00ffff;">' - '</span>              <span style="color: #555555;">|</span>
+<span style="color: #555555;">|</span>   <span style="color: #ffffff;">&gt; Enzymatic Chemistry</span>                                                                <span style="color: #555555;">|</span>
+<span style="color: #555555;">|</span>                                                                                        <span style="color: #555555;">|</span>
+<span style="color: #555555;">|</span>   <span style="color: #00ff00; font-weight: bold;">[STATUS]: ONLINE</span>              <span style="color: #ffffff;">Architectures, Nanomaterials</span>       <span style="color: #00ffff; font-weight: bold;">L A B O R A T O R Y</span> <span style="color: #555555;">|</span>
+<span style="color: #555555;">|</span>                                 <span style="color: #ffffff;">& Dynamics Group</span>                                       <span style="color: #555555;">|</span>
+<span style="color: #555555;">+========================================================================================+</span>
+    </div>
+
+    <section id="about">
+        <h2>01. ABOUT THE LAB</h2>
+        <p>
+            Welcome to the <strong>AND Lab</strong>. We operate at the intersection of theoretical physics and computational chemistry.
+            Our work utilizes high-performance computing (HPC) to model <span class="research-tag">Valleytronics</span>,
+            <span class="research-tag">Topological Materials</span>, and <span class="research-tag">Complex Catalytic Systems</span>.
+        </p>
+    </section>
+
+    <section id="research">
+        <h2>02. RESEARCH AREAS</h2>
+        <p><strong>>> FOCUS: Plasmonic & Heterogeneous Catalysis</strong><br>
+        Investigating reaction pathways on noble metal surfaces enhanced by localized surface plasmon resonance (LSPR).</p>
+        
+        <p><strong>>> FOCUS: Boron Architectures</strong><br>
+        Calculating band structures of novel boron allotropes using Density Functional Theory (DFT).</p>
+        
+        <div class="equation-box">
+            <strong>Theoretical Framework:</strong><br>
+            We employ the Kohn-Sham formulation for many-body systems:<br><br>
+            $$ \left( -\frac{\hbar^2}{2m} \nabla^2 + V_{eff}(\mathbf{r}) \right) \psi_i(\mathbf{r}) = \varepsilon_i \psi_i(\mathbf{r}) $$
+        </div>
+    </section>
+
+    <section id="publications">
+        <h2>03. LATEST OUTPUT</h2>
+        <ul>
+            <li>[2024] <em>"Valley-polarized Quantum Anomalous Hall Effect in Boron Monolayers"</em> - <strong>Journal of Phys. Chem. C</strong></li>
+            <li>[2023] <em>"Ab Initio MD simulations of Enzymatic proton transfer"</em> - <strong>Journal of Chemical Physics</strong></li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>04. INITIALIZE CONNECTION</h2>
+        <p>
+            To collaborate on theory development or request code access:<br>
+            > Email: <a href="mailto:your.email@example.com">your.email@example.com</a><br>
+            > GitHub: <a href="#">@yourusername</a>
+        </p>
+    </section>
+
+    <footer>
+        <br><br>
+        <hr style="border-color: #333;">
+        <small style="color: #555;">System.exit(0) // © 2025 AND Lab</small>
+    </footer>
+
+</div>
+
+</body>
+</html>
