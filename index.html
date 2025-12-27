@@ -174,10 +174,24 @@
 </div>
 
 <script>
-    // 1. The Prompt Text to type
+    // --- CONFIGURATION: ADJUST SPEEDS HERE ---
+    
+    // Time (in ms) between each character of the prompt (Higher = Slower)
+    // 100ms looks like deliberate human typing.
+    const typingSpeed = 100; 
+
+    // Time (in ms) between each line of the ASCII logo (Higher = Slower)
+    // 300ms gives a nice "retro loading" feel.
+    const asciiLineDelay = 300; 
+
+    // Time (in ms) to wait before the animation starts
+    const startDelay = 1000; 
+
+
+    // --- DATA ---
     const promptText = "root@AND-Research:~$";
     
-    // 2. The ASCII Art Data (Stored as an array of HTML strings to preserve colors)
+    // The ASCII Art Data
     const asciiLines = [
         `<span style="color: #555555;">+======================================================================================================================</span>`,
         `<span style="color: #555555;">|</span>  <span style="color: #ffffff; font-weight: bold;">STRUCTURAL FRAMEWORKS</span>                              <span style="color: #555555;">|</span>    <span style="color: #ffffff; font-weight: bold;">NANOMATERIALS</span>    <span style="color: #555555;">|</span>    <span style="color: #ffffff; font-weight: bold;">DYNAMICS</span>    <span style="color: #555555;">|</span>   <span style="color: #00ffff; font-weight: bold;">THEORY DEV.</span>`,
@@ -201,7 +215,7 @@
     function typePrompt(text, index) {
         if (index < text.length) {
             document.getElementById('type-target').innerHTML += text.charAt(index);
-            setTimeout(() => typePrompt(text, index + 1), 50); // Speed of typing (ms)
+            setTimeout(() => typePrompt(text, index + 1), typingSpeed); 
         } else {
             // Animation Done: Show links and start printing ASCII art
             document.getElementById('nav-links').style.display = "inline";
@@ -209,21 +223,16 @@
         }
     }
 
-    // --- FUNCTION 2: Print ASCII Art line by line (faster) ---
+    // --- FUNCTION 2: Print ASCII Art line by line ---
     function printAsciiArt(lineIndex) {
         const container = document.getElementById('ascii-container');
         
         if (lineIndex < asciiLines.length) {
-            // Create a div for the new line
             const div = document.createElement('div');
             div.innerHTML = asciiLines[lineIndex];
             container.appendChild(div);
             
-            // Scroll to bottom of terminal if needed (optional)
-            // container.scrollTop = container.scrollHeight;
-
-            // Call next line with a small delay (15ms = very fast "modem" look)
-            setTimeout(() => printAsciiArt(lineIndex + 1), 15); 
+            setTimeout(() => printAsciiArt(lineIndex + 1), asciiLineDelay); 
         } else {
             // Animation Done: Fade in the rest of the page
             document.getElementById('main-content').classList.add('visible');
@@ -232,14 +241,12 @@
 
     // --- START SEQUENCE ---
     window.onload = function() {
-        // Clear containers just in case
         document.getElementById('type-target').innerHTML = "";
         document.getElementById('ascii-container').innerHTML = "";
         
-        // Start typing after 500ms delay
         setTimeout(() => {
             typePrompt(promptText, 0);
-        }, 500);
+        }, startDelay);
     };
 </script>
 
