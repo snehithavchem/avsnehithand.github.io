@@ -73,15 +73,15 @@
     const startDelay = 1000; 
     const promptText = "root@AND-Research:~$";
     
-    // YOUR EXACT ASCII ART DATA (Complex Scientific Schematic)
+    // YOUR EXACT ASCII ART DATA (FIXED & DEBUGGED)
     const asciiLines = [
         `<span style="color: #555555;">+==================================================================================================================================</span>`,
         `<span style="color: #555555;">|</span>  <span style="color: #ffffff; font-weight: bold;">STRUCTURAL FRAMEWORKS</span>            <span style="color: #ffffff; font-weight: bold;">NANOMATERIALS</span>     <span style="color: #555555;">|</span>     <span style="color: #ffffff; font-weight: bold;">DYNAMICS</span>      <span style="color: #555555;">|</span>   <span style="color: #00ffff; font-weight: bold;">THEORY DEV.</span>`,
         `<span style="color: #555555;">+==================================================================================================================================</span>`,
         `<span style="color: #555555;">|</span>`,
         `<span style="color: #555555;">|</span>   <span style="color: #00ff00; font-weight: bold;">[ RESEARCH MODULES ]</span>                             <span style="color: #4da6ff; font-weight: bold;">█████╗ ███╗   ██╗██████╗</span>`,
-        `<span style="color: #555555;">|</span>                                                <span style="color: #4da6ff; font-weight: bold;">██╔══██╗████╗  ██║██╔══██╗</span>        <span style="color: #00ffff;"> < H…H > </span>`,
-        `<span style="color: #555555;">|</span>   <span style="color: #ffffff;">> Electronic structure of Plasmonic systems</span>    <span style="color: #4da6ff; font-weight: bold;">███████║██╔██╗ ██║██║  ██║</span>      <span style="color: #ff00ff;">·:´¯</span><span style="color: #ffff00; font-weight: bold;">[e⁻]</span><span style="color: #ff00ff;">¯`:·</span>`,
+        `<span style="color: #555555;">|</span>                                                <span style="color: #4da6ff; font-weight: bold;">██╔══██╗████╗  ██║██╔══██╗</span>        <span style="color: #00ffff;"> &lt; H…H &gt; </span>`,
+        `<span style="color: #555555;">|</span>   <span style="color: #ffffff;">> Electronic structure of Plasmonic systems</span>    <span style="color: #4da6ff; font-weight: bold;">███████║██╔██╗ ██║██║  ██║</span>      <span style="color: #ff00ff;">·:´¯</span><span style="color: #ffff00; font-weight: bold;">[e⁻]</span><span style="color: #ff00ff;">¯\`:·</span>`,
         `<span style="color: #555555;">|</span>   <span style="color: #ffffff;">> Homogeneous & Heterogeneous Catalysis</span>        <span style="color: #4da6ff; font-weight: bold;">██╔══██║██║╚██╗██║██║  ██║</span>      <span style="color: #4da6ff;">╔══╪═══╪══╗</span>`,
         `<span style="color: #555555;">|</span>   <span style="color: #ffffff;">> Topological Quantum Materials for catalysis</span>  <span style="color: #4da6ff; font-weight: bold;">██║  ██║██║ ╚████║██████╔╝</span>      <span style="color: #555555;">║</span><span style="color: #4da6ff;">░▒▓▓█▓▓▒░</span><span style="color: #555555;">║</span>`,
         `<span style="color: #555555;">|</span>   <span style="color: #ffffff;">> Electronic Structure of Solids and Molecules</span> <span style="color: #4da6ff; font-weight: bold;">╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝</span>      <span style="color: #555555;">╚═════════╝</span>`,
@@ -93,7 +93,6 @@
         `<span style="color: #555555;">+==================================================================================================================================</span>`
     ];
 
-    // --- REMAINDER OF SCRIPT STAYS EXACTLY THE SAME ---
     function typePrompt(text, index) {
         if (index < text.length) {
             document.getElementById('type-target').innerHTML += text.charAt(index);
@@ -130,5 +129,6 @@
         setTimeout(() => { typePrompt(promptText, 0); }, startDelay);
     };
 </script>
+    
 </body>
 </html>
