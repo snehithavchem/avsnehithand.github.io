@@ -1,124 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AND-Research Terminal</title>
-<style>
-    body {
-        background-color: #0d0d0d; /* Deep black background */
-        color: #ffffff;
-        font-family: 'Courier New', monospace; /* Mandatory for ASCII alignment */
-        margin: 0;
-        padding: 20px;
-        line-height: 1.2;
-    }
-    #terminal-container {
-        max-width: 1100px;
-        margin: auto;
-    }
-    #nav-links {
-        display: none; /* Hidden until typing finishes */
-        color: #00ffff;
-        text-shadow: 0 0 5px #00ffff;
-    }
-    a { text-decoration: none; color: inherit; margin-left: 20px; }
-    a:hover { color: #ffffff; }
-    #ascii-container {
-        margin-top: 20px;
-        white-space: pre; /* CRITICAL for ASCII alignment */
-        overflow-x: auto; /* Prevents breaking on small screens */
-    }
-    /* Blinking cursor effect */
-    .cursor {
-        display: inline-block;
-        width: 10px;
-        height: 18px;
-        background-color: #00ffff;
-        animation: blink 1s step-end infinite;
-        vertical-align: middle;
-    }
-    @keyframes blink { 50% { opacity: 0; } }
-
-    /* Content that appears after animation */
-    #main-content {
-        opacity: 0;
-        transition: opacity 2s ease-in;
-        margin-top: 40px;
-        color: #aaaaaa;
-    }
-    #main-content.visible { opacity: 1; }
-    h1 { color: #ffffff; }
-    .highlight { color: #00ffff; font-weight: bold; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AND- Research | Home</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 </head>
 <body>
 
-<div id="terminal-container">
-    <div>
-        <span id="type-target" style="color: #00ff00;"></span><span class="cursor"></span>
-        <span id="nav-links">
-            <a href="#home">Home</a>
-            <a href="#research">Research</a>
-            <a href="#team">Team</a>
-            <a href="#contact">Contact</a>
+<div class="container">
+
+    <nav>
+        <span id="type-target" style="color: var(--accent-green);"></span><span class="cursor"></span>
+        
+        <span id="nav-links" style="display:none;">
+            &nbsp;
+            <a href="index.html" class="active">./about</a> | 
+            <a href="research.html">./research</a> | 
+            <a href="publications.html">./publications</a> | 
+            <a href="contact.html">./contact</a>
         </span>
-    </div>
+    </nav>
+    <br><br>
 
-    <div id="ascii-container"></div>
+    <div class="terminal-logo" id="ascii-container"></div>
 
-    <div id="main-content">
-        <h1>> Welcome to <span class="highlight">AND-Research</span></h1>
-        <p>Exploring the frontiers of light-matter interactions, catalytic architectures, and quantum dynamics. Our work bridges the gap between theoretical models and real-world material applications.</p>
-        <br>
-        <p>> System Status: All modules operational. Begin scrolling for data...</p>
+    <div id="main-content" class="fade-in-section">
+        <section id="about_and">
+            <h2>System Specs: The Protocol</h2>
+            <p>
+                Welcome to <strong>AND- Research</strong> (not the conjunction "AND"). 
+                I execute a three-part protocol focusing on <strong>Architectures, Nanomaterials, and Description/Dynamics</strong>.
+                <br><br>
+                My research integrates <span class="research-tag">Architectures</span> (computational modelling and methodological development within electronic structure frameworks) applied to diverse <span class="research-tag">Nanomaterials</span> (interfaces, biomimetics, plasmonics, and catalysts), 
+                where I focus on the <span class="research-tag">Description & Dynamics</span>: utilising QM calculations to <strong>describe</strong> the electronic environment, and classical/ab-initio MD (or) QM/MM simulations to capture the <strong>dynamics</strong>, thereby elucidating the atomistic mechanisms of these chemical phenomena.
+            </p>
+        </section>
+        
+        <section id="admin_profile">
+            <h2>Admin Profile: The Operator</h2>
+        <div class="profile-stats">
+            <p>
+            <strong>[System Name]:</strong> Adabala Venkata Snehith<br>
+            <strong>[Display Alias]:</strong> Snehith Adabala<br>
+            <strong>[Unique ID]:</strong> <a href="https://orcid.org/0000-0002-4294-6385" target="_blank">ORCID: 0000-0002-4294-6385</a><br>
+            <strong>[Server Location]:</strong> TIFR Hyderabad, India
+            </p>
+        </div>
+            <br>
+            <p>
+                My core processing power is dedicated to <strong>Computational and Theoretical Chemistry</strong>. I focus on executing electronic structure calculations for metals, materials, and molecules—using these frameworks to explore the unconventional pathways that govern chemical phenomena.
+                <br><br>
+                <strong>[Background Processes]:</strong>
+                <br>
+                When the simulation is on standby, I switch to <strong>Creative Mode</strong>. I am a passionate music and art enthusiast (practicing as an amateur artist in my downtime) and a trained culinary enthusiast—because cooking is, effectively, just edible synthesis.
+            </p>
+        </section>
+
+        <footer>
+            <br><br>
+            <hr style="border-color: #333;">
+            <small style="color: #555;">System.exit(0) // © 2025 AND- Research</small>
+        </footer>
     </div>
 </div>
 
 <script>
     // --- CONFIGURATION ---
-    const typingSpeed = 50;  // Faster typing for a snappier feel
-    const asciiLineDelay = 150; // Faster line-by-line loading
-    const startDelay = 800;   // Initial pause before starting
-    const promptText = "root@AND-Research:~$ initialize_protocol --visual";
-
-    // --- YOUR NEW ASCII ART DATA WITH THUNDERBIRD EMBLEM ---
-    // Colors used:
-    // #555555 (Grey borders)
-    // #ffffff (White text)
-    // #00ffff (Cyan - Headers/Plasmonics)
-    // #00ff00 (Green - Success/Homogeneous core)
-    // #4da6ff (Blue - AND Logo)
-    // #ff4500 (Orange/Red - Active Site)
-    // #8a2be2 (Purple - Electronic Bands)
-
+    const typingSpeed = 100; 
+    const asciiLineDelay = 300; 
+    const startDelay = 1000; 
+    const promptText = "root@AND-Research:~$";
+    
+    // YOUR UPDATED ASCII ART DATA (WITH THUNDERBIRD EMBLEM)
     const asciiLines = [
-        `<span style="color: #555555;">+==================================================================================================================================+</span>`,
-        `<span style="color: #555555;">|</span>  <span style="color: #ffffff; font-weight: bold;">STRUCTURAL FRAMEWORKS</span>            <span style="color: #ffffff; font-weight: bold;">NANOMATERIALS</span>      <span style="color: #555555;">|</span>     <span style="color: #ffffff; font-weight: bold;">DYNAMICS</span>      <span style="color: #555555;">|</span>   <span style="color: #00ffff; font-weight: bold;">THEORY DEV.</span>                                  <span style="color: #555555;">|</span>`,
-        `<span style="color: #555555;">+==================================================================================================================================+</span>`,
-        `<span style="color: #555555;">|</span>                                                                                                                                  <span style="color: #555555;">|</span>`,
-        `<span style="color: #555555;">|</span>   <span style="color: #00ff00; font-weight: bold;">[ RESEARCH MODULES ]</span>                                     <span style="color: #4da6ff; font-weight: bold;">█████╗ ███╗   ██╗██████╗</span>                                    <span style="color: #555555;">|</span>`,
-        // --- THUNDERBIRD EMBLEM STARTS HERE ---
-        `<span style="color: #555555;">|</span>                                                            <span style="color: #4da6ff; font-weight: bold;">██╔══██╗████╗  ██║██╔══██╗</span>       <span style="color: #00ffff; font-weight: bold;">&lt;// * ~ | ~ * \\&gt;</span>       <span style="color: #555555;">|</span>`,
-        `<span style="color: #555555;">|</span>   <span style="color: #ffffff;">> Electronic structure of Plasmonic systems</span>    <span style="color: #4da6ff; font-weight: bold;">███████║██╔██╗ ██║██║  ██║</span>        <span style="color: #00ff00;">| \ . (ø) . / |</span>       <span style="color: #555555;">|</span>`,
-        `<span style="color: #555555;">|</span>   <span style="color: #ffffff;">> Homogeneous & Heterogeneous Catalysis</span>        <span style="color: #4da6ff; font-weight: bold;">██╔══██║██║╚██╗██║██║  ██║</span>        <span style="color: #ffffff;">\  ===</span><span style="color: #ff4500;">{^}</span><span style="color: #ffffff;">===  /</span>        <span style="color: #555555;">|</span>`,
-        `<span style="color: #555555;">|</span>   <span style="color: #ffffff;">> Topological Quantum Materials for catalysis</span>  <span style="color: #4da6ff; font-weight: bold;">██║  ██║██║ ╚████║██████╔╝</span>         <span style="color: #8a2be2;">\ [#######] /</span>        <span style="color: #555555;">|</span>`,
-        `<span style="color: #555555;">|</span>   <span style="color: #ffffff;">> Electronic Structure of Solids and Molecules</span> <span style="color: #4da6ff; font-weight: bold;">╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝</span>          <span style="color: #8a2be2;">V^^^^^^^^^V</span>         <span style="color: #555555;">|</span>`,
-        // --- THUNDERBIRD EMBLEM ENDS HERE ---
-        `<span style="color: #555555;">|</span>   <span style="color: #ffffff;">> Ab Initio MD & QM/MM</span>                                                                                                   <span style="color: #555555;">|</span>`,
-        `<span style="color: #555555;">|</span>   <span style="color: #ffffff;">> Biomimetic Chemistry</span>                                                                                                   <span style="color: #555555;">|</span>`,
-        `<span style="color: #555555;">|</span>                                                                                                                                  <span style="color: #555555;">|</span>`,
-        `<span style="color: #555555;">|</span>   <span style="color: #00ff00; font-weight: bold;">[STATUS]: ONLINE</span>                               <span style="color: #ffffff;">Architectures, Nanomaterials</span>         <span style="color: #00ffff; font-weight: bold;">      AND- Research       </span> <span style="color: #555555;">|</span>`,
-        `<span style="color: #555555;">|</span>                                                                <span style="color: #ffffff;">& Dynamics Research</span>                                               <span style="color: #555555;">|</span>`,
-        `<span style="color: #555555;">+==================================================================================================================================+</span>`
+        `<span style="color: #555555;">+==================================================================================================================================</span>`,
+        `<span style="color: #555555;">|</span>  <span style="color: #ffffff; font-weight: bold;">STRUCTURAL FRAMEWORKS</span>             <span style="color: #ffffff; font-weight: bold;">NANOMATERIALS</span>      <span style="color: #555555;">|</span>      <span style="color: #ffffff; font-weight: bold;">DYNAMICS</span>      <span style="color: #555555;">|</span>    <span style="color: #00ffff; font-weight: bold;">THEORY DEV.</span>`,
+        `<span style="color: #555555;">+==================================================================================================================================</span>`,
+        `<span style="color: #555555;">|</span>`,
+        `<span style="color: #555555;">|</span>    <span style="color: #00ff00; font-weight: bold;">[ RESEARCH MODULES ]</span>                             <span style="color: #4da6ff; font-weight: bold;">█████╗ ███╗   ██╗██████╗</span>`,
+        `<span style="color: #555555;">|</span>                                                    <span style="color: #4da6ff; font-weight: bold;">██╔══██╗████╗  ██║██╔══██╗</span>        <span style="color: #00ffff; font-weight: bold;">&lt;// * ~ | ~ * \\&gt;</span>`,
+        `<span style="color: #555555;">|</span>    <span style="color: #ffffff;">> Electronic structure of Plasmonic systems</span>    <span style="color: #4da6ff; font-weight: bold;">███████║██╔██╗ ██║██║  ██║</span>         <span style="color: #ffff00; font-weight: bold;">| \\ . (ø) . / |</span>`,
+        `<span style="color: #555555;">|</span>    <span style="color: #ffffff;">> Homogeneous & Heterogeneous Catalysis</span>        <span style="color: #4da6ff; font-weight: bold;">██╔══██║██║╚██╗██║██║  ██║</span>         <span style="color: #ffffff;">\\  ===</span><span style="color: #ff4500; font-weight: bold;">{^}</span><span style="color: #ffffff;">===  /</span>`,
+        `<span style="color: #555555;">|</span>    <span style="color: #ffffff;">> Topological Quantum Materials for catalysis</span>  <span style="color: #4da6ff; font-weight: bold;">██║  ██║██║ ╚████║██████╔╝</span>          <span style="color: #8a2be2;">\\ [#######] /</span>`,
+        `<span style="color: #555555;">|</span>    <span style="color: #ffffff;">> Electronic Structure of Solids and Molecules</span> <span style="color: #4da6ff; font-weight: bold;">╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝</span>           <span style="color: #8a2be2;">V^^^^^^^^^V</span>`,
+        `<span style="color: #555555;">|</span>    <span style="color: #ffffff;">> Ab Initio MD & QM/MM</span>`,
+        `<span style="color: #555555;">|</span>    <span style="color: #ffffff;">> Biomimetic Chemistry</span>`,
+        `<span style="color: #555555;">|</span>`,
+        `<span style="color: #555555;">|</span>    <span style="color: #00ff00; font-weight: bold;">[STATUS]: ONLINE</span>                               <span style="color: #ffffff;">Architectures, Nanomaterials</span>         <span style="color: #00ffff; font-weight: bold;">      AND- Research        </span>`,
+        `<span style="color: #555555;">|</span>                                                                <span style="color: #ffffff;">& Dynamics Research</span>`,
+        `<span style="color: #555555;">+==================================================================================================================================</span>`
     ];
 
     function typePrompt(text, index) {
         if (index < text.length) {
             document.getElementById('type-target').innerHTML += text.charAt(index);
-            setTimeout(() => typePrompt(text, index + 1), typingSpeed);
+            setTimeout(() => typePrompt(text, index + 1), typingSpeed); 
         } else {
-            // Once typing is done, show links and start printing ASCII
             const navLinks = document.getElementById('nav-links');
             if(navLinks) navLinks.style.display = "inline";
             printAsciiArt(0);
@@ -129,28 +108,26 @@
         const container = document.getElementById('ascii-container');
         if (lineIndex < asciiLines.length) {
             const div = document.createElement('div');
-            // Important: white-space: pre maintains all spaces for alignment
-            div.style.whiteSpace = "pre";
+            div.style.whiteSpace = "pre"; 
+            div.style.fontFamily = "'Courier New', monospace";
             div.innerHTML = asciiLines[lineIndex];
             container.appendChild(div);
-            // Recursive call for the next line
-            setTimeout(() => printAsciiArt(lineIndex + 1), asciiLineDelay);
+            setTimeout(() => printAsciiArt(lineIndex + 1), asciiLineDelay); 
         } else {
-             // Animation complete, show main content
              const mainContent = document.getElementById('main-content');
              if(mainContent) mainContent.classList.add('visible');
         }
     }
 
-    // Start the sequence on page load
     window.onload = function() {
-        // Clear containers in case of reload
-        document.getElementById('type-target').innerHTML = "";
-        document.getElementById('ascii-container').innerHTML = "";
-
+        const typeTarget = document.getElementById('type-target');
+        const asciiContainer = document.getElementById('ascii-container');
+        
+        if(typeTarget) typeTarget.innerHTML = "";
+        if(asciiContainer) asciiContainer.innerHTML = "";
+        
         setTimeout(() => { typePrompt(promptText, 0); }, startDelay);
     };
 </script>
-
 </body>
 </html>
